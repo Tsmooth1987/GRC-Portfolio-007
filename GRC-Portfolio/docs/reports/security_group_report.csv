@@ -1,0 +1,2 @@
+GroupID,GroupName,RiskyRule
+sg-0d928eb31820e27e4,test-risky-sg,Allows access to sensitive port 22 (TCP) from Anywhere (0.0.0.0/0)

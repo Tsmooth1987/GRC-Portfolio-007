@@ -1,0 +1,10 @@
+--- Server Audit Report ---
+The following servers were processed:
+----------------------------------
+server-db-01
+server-web-03
+server-app-02
+server-legacy-01
+server-k8s-node-01
+----------------------------------
+Audit complete.

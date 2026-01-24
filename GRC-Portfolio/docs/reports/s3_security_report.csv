@@ -1,0 +1,4 @@
+BucketName,VersioningStatus,PublicAccessBlocked
+config-bucket-291846646255,Enabled,True
+tjsbucketforhisbuckets,Enabled,True
+tsmooths-s3bucket-fun,Enabled,True

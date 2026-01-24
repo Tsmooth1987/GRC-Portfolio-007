@@ -1,0 +1,7 @@
+server-db-01,True
+server-web-03,False
+server-app-02,False
+server-cache-01,True
+server-loadbalancer-01,False
+server-bastion-01,True
+server-monitoring-01,False

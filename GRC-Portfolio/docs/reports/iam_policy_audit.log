@@ -1,0 +1,17 @@
+2025-07-18 20:20:01,389 - INFO - IAM Policy Auditor script started.
+2025-07-18 20:20:01,399 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 20:20:01,519 - INFO - Connecting to AWS to get IAM policies...
+2025-07-18 20:20:01,828 - INFO - Successfully found 0 customer-managed policies to audit.
+2025-07-18 20:20:01,829 - INFO - No policies with administrator access found. No report generated.
+2025-07-18 20:20:01,829 - INFO - IAM Policy Auditor script finished.
+2025-07-18 20:21:42,149 - INFO - IAM Policy Auditor script started.
+2025-07-18 20:21:42,158 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 20:21:42,244 - INFO - Connecting to AWS to get IAM policies...
+2025-07-18 20:21:42,544 - INFO - Successfully found 1 customer-managed policies to audit.
+2025-07-18 20:21:42,545 - INFO - Starting analysis of each policy document...
+2025-07-18 20:21:42,545 - INFO -   - Analyzing policy: Test-Admin-Policy (arn:aws:iam::291846646255:policy/Test-Admin-Policy)
+2025-07-18 20:21:42,640 - WARNING -     - FOUND ADMIN POLICY: Test-Admin-Policy. It allows all actions on all resources.
+2025-07-18 20:21:42,640 - INFO - Finished analyzing all policies.
+2025-07-18 20:21:42,640 - INFO - Found 1 policy/policies with administrator access. Creating CSV report...
+2025-07-18 20:21:42,648 - INFO - Successfully saved IAM policy audit report to iam_admin_policies_report.csv
+2025-07-18 20:21:42,648 - INFO - IAM Policy Auditor script finished.

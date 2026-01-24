@@ -1,0 +1,13 @@
+2025-07-18 20:41:06,566 - INFO - IAM Policy Alerter script started.
+2025-07-18 20:41:06,575 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 20:41:06,752 - INFO - Connecting to AWS to get IAM policies...
+2025-07-18 20:41:07,045 - INFO - Successfully found 1 customer-managed policies to audit.
+2025-07-18 20:41:07,045 - INFO - Starting analysis of each policy document...
+2025-07-18 20:41:07,045 - INFO -   - Analyzing policy: Test-Admin-Policy (arn:aws:iam::291846646255:policy/Test-Admin-Policy)
+2025-07-18 20:41:07,143 - WARNING -     - FOUND ADMIN POLICY: Policy 'Test-Admin-Policy' (arn:aws:iam::291846646255:policy/Test-Admin-Policy) grants full Administrator Access.
+2025-07-18 20:41:07,143 - INFO -       - Sending alert to SNS topic: arn:aws:sns:us-east-1:291846646255:GRC-Alerts
+2025-07-18 20:41:07,493 - INFO -       - Successfully sent alert.
+2025-07-18 20:41:07,500 - INFO - Finished analyzing all policies.
+2025-07-18 20:41:07,501 - INFO - Found 1 policy/policies with administrator access. Creating CSV report...
+2025-07-18 20:41:07,552 - INFO - Successfully saved IAM policy audit report to iam_admin_policies_report.csv
+2025-07-18 20:41:07,553 - INFO - IAM Policy Auditor script finished.

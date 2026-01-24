@@ -1,0 +1,6 @@
+Unpatched Servers Report:
+-------------------------
+server-web-03
+server-app-02
+server-loadbalancer-01
+server-monitoring-01

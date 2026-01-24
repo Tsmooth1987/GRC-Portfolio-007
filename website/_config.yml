@@ -1,0 +1,32 @@
+# Site settings
+title: Terence Webster | GRC Engineer & AWS Security Specialist
+description: Portfolio of Terence Webster - ISO 27001 Lead Auditor & GRC Engineer specializing in AWS cloud security
+theme: jekyll-theme-cayman
+
+# Navigation
+nav:
+  - title: About
+    url: /#about
+  - title: Projects
+    url: /#projects
+  - title: Blog
+    url: /blog/
+  - title: Contact
+    url: /#contact
+
+# Social links
+github_username: Tsmooth1987
+linkedin_username: terence-webster-9a222b1aa
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/

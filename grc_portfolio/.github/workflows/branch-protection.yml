@@ -1,0 +1,44 @@
+name: Branch Protection Setup
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup-branch-protection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up branch protection for main
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.rest.repos.updateBranchProtection({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              branch: 'main',
+              required_status_checks: {
+                strict: true,
+                contexts: [
+                  'validate-cfn-templates',
+                  'lint-python',
+                  'cfn-lint',
+                  'python-tests (3.11, lab-4-security-monitoring-incident-response)',
+                  'python-tests (3.11, lab-5-compliance-automation)',
+                  'python-tests (3.11, lab-6-data-security)',
+                  'python-tests (3.11, lab-8-infrastructure-protection)',
+                  'validate-tests'
+                ]
+              },
+              enforce_admins: true,
+              required_pull_request_reviews: {
+                dismissal_restrictions: {},
+                dismiss_stale_reviews: true,
+                require_code_owner_reviews: true,
+                required_approving_review_count: 1
+              },
+              restrictions: null
+            })
+            console.log('Branch protection rules for main branch have been set up')

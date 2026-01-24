@@ -1,0 +1,60 @@
+2025-07-18 20:30:50,010 - INFO - S3 Remediator script started.
+2025-07-18 20:30:50,010 - INFO - --- RUNNING IN DRY-RUN MODE ---
+2025-07-18 20:30:50,021 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 20:30:50,714 - INFO - Connecting to AWS to get S3 bucket list...
+2025-07-18 20:30:51,065 - INFO - Successfully found 3 buckets to audit.
+2025-07-18 20:30:51,065 - INFO - Starting audit of each bucket...
+2025-07-18 20:30:51,066 - INFO - --- Checking bucket: config-bucket-291846646255 ---
+2025-07-18 20:30:51,439 - INFO -   - Versioning Status: NotEnabled
+2025-07-18 20:30:51,439 - WARNING -     - DRY-RUN: Would enable versioning on bucket 'config-bucket-291846646255'.
+2025-07-18 20:30:51,509 - INFO -   - Public Access Blocked: True
+2025-07-18 20:30:51,509 - INFO - --- Checking bucket: tjsbucketforhisbuckets ---
+2025-07-18 20:30:51,809 - INFO -   - Versioning Status: Enabled
+2025-07-18 20:30:51,879 - INFO -   - Public Access Blocked: True
+2025-07-18 20:30:51,879 - INFO - --- Checking bucket: tsmooths-s3bucket-fun ---
+2025-07-18 20:30:52,157 - INFO -   - Versioning Status: Enabled
+2025-07-18 20:30:52,224 - INFO -   - Public Access Blocked: True
+2025-07-18 20:30:52,225 - INFO - Finished auditing all buckets.
+2025-07-18 20:30:52,225 - INFO - Creating CSV report from audit findings...
+2025-07-18 20:30:52,235 - INFO - Successfully saved report to s3_security_report.csv
+2025-07-18 20:30:52,235 - INFO - S3 Auditor script finished.
+2025-07-18 20:32:27,475 - INFO - S3 Remediator script started.
+2025-07-18 20:32:27,475 - INFO - --- RUNNING IN LIVE MODE ---
+2025-07-18 20:32:27,485 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 20:32:28,560 - INFO - Connecting to AWS to get S3 bucket list...
+2025-07-18 20:32:28,860 - INFO - Successfully found 3 buckets to audit.
+2025-07-18 20:32:28,861 - INFO - Starting audit of each bucket...
+2025-07-18 20:32:28,861 - INFO - --- Checking bucket: config-bucket-291846646255 ---
+2025-07-18 20:32:29,241 - INFO -   - Versioning Status: NotEnabled
+2025-07-18 20:32:29,241 - INFO -     - REMEDIATING: Enabling versioning on bucket 'config-bucket-291846646255'...
+2025-07-18 20:32:29,436 - INFO -       - Successfully enabled versioning on 'config-bucket-291846646255'.
+2025-07-18 20:32:29,506 - INFO -   - Public Access Blocked: True
+2025-07-18 20:32:29,507 - INFO - --- Checking bucket: tjsbucketforhisbuckets ---
+2025-07-18 20:32:29,804 - INFO -   - Versioning Status: Enabled
+2025-07-18 20:32:29,871 - INFO -   - Public Access Blocked: True
+2025-07-18 20:32:29,872 - INFO - --- Checking bucket: tsmooths-s3bucket-fun ---
+2025-07-18 20:32:30,231 - INFO -   - Versioning Status: Enabled
+2025-07-18 20:32:30,304 - INFO -   - Public Access Blocked: True
+2025-07-18 20:32:30,304 - INFO - Finished auditing all buckets.
+2025-07-18 20:32:30,304 - INFO - Creating CSV report from audit findings...
+2025-07-18 20:32:30,317 - INFO - Successfully saved report to s3_security_report.csv
+2025-07-18 20:32:30,317 - INFO - S3 Auditor script finished.
+2025-07-18 20:33:26,302 - INFO - S3 Remediator script started.
+2025-07-18 20:33:26,303 - INFO - --- RUNNING IN LIVE MODE ---
+2025-07-18 20:33:26,312 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 20:33:27,034 - INFO - Connecting to AWS to get S3 bucket list...
+2025-07-18 20:33:27,332 - INFO - Successfully found 3 buckets to audit.
+2025-07-18 20:33:27,333 - INFO - Starting audit of each bucket...
+2025-07-18 20:33:27,333 - INFO - --- Checking bucket: config-bucket-291846646255 ---
+2025-07-18 20:33:27,709 - INFO -   - Versioning Status: Enabled
+2025-07-18 20:33:27,781 - INFO -   - Public Access Blocked: True
+2025-07-18 20:33:27,782 - INFO - --- Checking bucket: tjsbucketforhisbuckets ---
+2025-07-18 20:33:28,077 - INFO -   - Versioning Status: Enabled
+2025-07-18 20:33:28,146 - INFO -   - Public Access Blocked: True
+2025-07-18 20:33:28,146 - INFO - --- Checking bucket: tsmooths-s3bucket-fun ---
+2025-07-18 20:33:28,438 - INFO -   - Versioning Status: Enabled
+2025-07-18 20:33:28,514 - INFO -   - Public Access Blocked: True
+2025-07-18 20:33:28,514 - INFO - Finished auditing all buckets.
+2025-07-18 20:33:28,514 - INFO - Creating CSV report from audit findings...
+2025-07-18 20:33:28,521 - INFO - Successfully saved report to s3_security_report.csv
+2025-07-18 20:33:28,521 - INFO - S3 Auditor script finished.

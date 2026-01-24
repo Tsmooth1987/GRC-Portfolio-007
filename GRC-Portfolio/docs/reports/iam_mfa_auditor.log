@@ -1,0 +1,16 @@
+2025-07-18 00:54:08,251 - INFO - IAM MFA Auditor script started.
+2025-07-18 00:54:08,262 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 00:54:08,357 - INFO - Connecting to AWS to get IAM user list...
+2025-07-18 00:54:08,652 - INFO - Successfully found 0 users to audit.
+2025-07-18 00:54:08,652 - WARNING - No audit results to save to a report.
+2025-07-18 00:54:08,652 - INFO - IAM MFA Auditor script finished.
+2025-07-18 00:55:02,116 - INFO - IAM MFA Auditor script started.
+2025-07-18 00:55:02,124 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 00:55:02,202 - INFO - Connecting to AWS to get IAM user list...
+2025-07-18 00:55:02,490 - INFO - Successfully found 1 users to audit.
+2025-07-18 00:55:02,490 - INFO - Starting MFA audit for each user...
+2025-07-18 00:55:02,588 - INFO -   - User: 'test-user', MFA Enabled: False
+2025-07-18 00:55:02,588 - INFO - Finished auditing all users.
+2025-07-18 00:55:02,588 - INFO - Creating CSV report from MFA audit findings...
+2025-07-18 00:55:02,594 - INFO - Successfully saved MFA report to iam_mfa_report.csv
+2025-07-18 00:55:02,594 - INFO - IAM MFA Auditor script finished.

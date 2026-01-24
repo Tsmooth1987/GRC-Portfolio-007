@@ -1,0 +1,12 @@
+2025-07-29 14:02:32,334 - INFO - --- Starting IAM User Audit with Logging ---
+2025-07-29 14:02:32,360 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-29 14:02:32,473 - INFO - Connecting to AWS and requesting IAM user list...
+2025-07-29 14:02:32,879 - INFO - Found 0 IAM user(s) in the account.
+2025-07-29 14:02:32,879 - INFO - No IAM users to report on.
+2025-07-29 14:02:32,880 - INFO - --- Audit Complete ---
+2025-07-30 22:36:45,825 - INFO - --- Starting IAM User Audit with Logging ---
+2025-07-30 22:36:45,835 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-30 22:36:46,017 - INFO - Connecting to AWS and requesting IAM user list...
+2025-07-30 22:36:46,320 - INFO - Found 0 IAM user(s) in the account.
+2025-07-30 22:36:46,321 - INFO - No IAM users to report on.
+2025-07-30 22:36:46,321 - INFO - --- Audit Complete ---

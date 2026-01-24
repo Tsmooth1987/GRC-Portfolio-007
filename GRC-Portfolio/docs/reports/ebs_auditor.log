@@ -1,0 +1,6 @@
+2025-07-18 21:14:17,195 - INFO - --- Starting EBS Volume Auditor ---
+2025-07-18 21:14:17,195 - INFO - Scanning for unattached volumes in region: us-east-1
+2025-07-18 21:14:17,220 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 21:14:17,307 - INFO - Fetching all EBS volumes...
+2025-07-18 21:14:17,723 - INFO - No unattached EBS volumes found.
+2025-07-18 21:14:17,723 - INFO - --- EBS Volume Auditor Finished ---

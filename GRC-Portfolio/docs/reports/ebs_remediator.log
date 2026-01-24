@@ -1,0 +1,6 @@
+2025-07-18 21:16:11,956 - INFO - --- Starting EBS Volume Remediator ---
+2025-07-18 21:16:11,956 - WARNING - Running in DRY RUN mode.
+2025-07-18 21:16:11,965 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 21:16:12,184 - INFO - Fetching all EBS volumes...
+2025-07-18 21:16:12,529 - INFO - No unattached EBS volumes found.
+2025-07-18 21:16:12,529 - INFO - No further action needed.

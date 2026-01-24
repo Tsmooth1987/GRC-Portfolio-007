@@ -1,0 +1,79 @@
+# This line specifies the version of the CloudFormation template language.
+AWSTemplateFormatVersion: '2010-09-09'
+# This is a human-readable description of what the template does.
+Description: Deploys a secure S3 bucket with logging, versioning, and encryption enabled.
+
+# 'Parameters' are inputs you provide when you run the template.
+Parameters:
+  # This defines a parameter called 'S3BucketName'.
+  S3BucketName:
+    # It specifies that the input must be a string (text).
+    Type: String
+    # This description will be shown to the user to explain what to enter.
+    Description: The name for the S3 bucket. Must be globally unique.
+
+# 'Resources' are the AWS components that this template will create.
+Resources:
+  # This is the logical name for our S3 bucket resource within the template.
+  SecureS3Bucket:
+    # This specifies that we are creating an S3 bucket.
+    Type: 'AWS::S3::Bucket'
+    # 'Properties' define the configuration for the S3 bucket.
+    Properties:
+      # Sets the bucket's name to the value you provide in the 'S3BucketName' parameter.
+      BucketName: !Ref S3BucketName
+      # This section configures the block public access settings.
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true        # Prevents new public ACLs from being applied.
+        BlockPublicPolicy: true      # Prevents new public bucket policies.
+        IgnorePublicAcls: true       # Ignores all public ACLs on this bucket.
+        RestrictPublicBuckets: true  # Restricts access to this bucket if a public policy is applied.
+      # This section configures default encryption for all objects stored in the bucket.
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              # Specifies the encryption algorithm to use (AES256 is a strong standard).
+              SSEAlgorithm: AES256
+      # This section enables versioning for the bucket.
+      VersioningConfiguration:
+        # 'Enabled' means that every version of an object is saved, protecting against accidental deletion.
+        Status: Enabled
+
+  # This is a resource for a policy that will be attached to the S3 bucket.
+  SecureS3BucketPolicy:
+    # This specifies we are creating a bucket policy.
+    Type: AWS::S3::BucketPolicy
+    # 'Properties' define the configuration for the policy.
+    Properties:
+      # This attaches the policy to the 'SecureS3Bucket' we defined above.
+      Bucket: !Ref SecureS3Bucket
+      # The 'PolicyDocument' contains the actual permission rules.
+      PolicyDocument:
+        Statement:
+          - # 'Sid' is a statement identifier, just a label for the rule.
+            Sid: EnforceSSL
+            # 'Deny' explicitly forbids an action.
+            Effect: Deny
+            # 'Principal: *' means this rule applies to everyone.
+            Principal: '*'
+            # 'Action: s3:*' means this rule applies to all S3 actions.
+            Action: 's3:*'
+            # 'Resource' specifies which S3 bucket and objects this rule applies to.
+            Resource: 
+              - !Sub 'arn:aws:s3:::${SecureS3Bucket}/*'
+              - !Sub 'arn:aws:s3:::${SecureS3Bucket}'
+            # 'Condition' sets the circumstances under which the 'Deny' effect is triggered.
+            Condition:
+              Bool:
+                # This rule denies any action that is NOT sent over a secure (HTTPS) connection.
+                'aws:SecureTransport': 'false'
+
+# 'Outputs' are values that are returned after the template is successfully deployed.
+Outputs:
+  # This is the logical name for our output.
+  BucketName:
+    # A human-readable description of the output value.
+    Description: "Name of the secure S3 bucket"
+    # The actual value to return, which is the name of the created bucket.
+    Value: !Ref SecureS3Bucket
+

@@ -1,0 +1,54 @@
+2025-07-18 00:24:47,153 - INFO - S3 Auditor script started.
+2025-07-18 00:24:47,163 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 00:24:47,792 - INFO - Connecting to AWS to get S3 bucket list...
+2025-07-18 00:24:48,127 - INFO - Successfully found 3 buckets to audit.
+2025-07-18 00:24:48,127 - INFO - Starting audit of each bucket...
+2025-07-18 00:24:48,127 - INFO - --- Checking bucket: config-bucket-291846646255 ---
+2025-07-18 00:24:48,489 - INFO -   - Versioning Status: NotEnabled
+2025-07-18 00:24:48,557 - INFO -   - Public Access Blocked: True
+2025-07-18 00:24:48,558 - INFO - --- Checking bucket: tjsbucketforhisbuckets ---
+2025-07-18 00:24:48,924 - INFO -   - Versioning Status: Enabled
+2025-07-18 00:24:48,992 - INFO -   - Public Access Blocked: True
+2025-07-18 00:24:48,993 - INFO - --- Checking bucket: tsmooths-s3bucket-fun ---
+2025-07-18 00:24:49,349 - INFO -   - Versioning Status: Enabled
+2025-07-18 00:24:49,417 - INFO -   - Public Access Blocked: True
+2025-07-18 00:24:49,417 - INFO - Finished auditing all buckets.
+2025-07-18 00:24:49,417 - INFO - Creating CSV report from audit findings...
+2025-07-18 00:24:49,423 - INFO - Successfully saved report to s3_security_report.csv
+2025-07-18 00:24:49,423 - INFO - S3 Auditor script finished.
+2025-07-18 19:28:36,743 - INFO - S3 Auditor script started.
+2025-07-18 19:28:36,753 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 19:28:37,462 - INFO - Connecting to AWS to get S3 bucket list...
+2025-07-18 19:28:39,284 - INFO - Successfully found 3 buckets to audit.
+2025-07-18 19:28:39,284 - INFO - Starting audit of each bucket...
+2025-07-18 19:28:39,284 - INFO - --- Checking bucket: config-bucket-291846646255 ---
+2025-07-18 19:28:39,716 - INFO -   - Versioning Status: NotEnabled
+2025-07-18 19:28:39,787 - INFO -   - Public Access Blocked: True
+2025-07-18 19:28:39,788 - INFO - --- Checking bucket: tjsbucketforhisbuckets ---
+2025-07-18 19:28:40,105 - INFO -   - Versioning Status: Enabled
+2025-07-18 19:28:40,181 - INFO -   - Public Access Blocked: True
+2025-07-18 19:28:40,182 - INFO - --- Checking bucket: tsmooths-s3bucket-fun ---
+2025-07-18 19:28:40,569 - INFO -   - Versioning Status: Enabled
+2025-07-18 19:28:40,640 - INFO -   - Public Access Blocked: True
+2025-07-18 19:28:40,641 - INFO - Finished auditing all buckets.
+2025-07-18 19:28:40,641 - INFO - Creating CSV report from audit findings...
+2025-07-18 19:28:40,654 - INFO - Successfully saved report to s3_security_report.csv
+2025-07-18 19:28:40,654 - INFO - S3 Auditor script finished.
+2025-07-18 19:28:56,088 - INFO - S3 Auditor script started.
+2025-07-18 19:28:56,116 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 19:28:56,681 - INFO - Connecting to AWS to get S3 bucket list...
+2025-07-18 19:28:56,988 - INFO - Successfully found 3 buckets to audit.
+2025-07-18 19:28:56,988 - INFO - Starting audit of each bucket...
+2025-07-18 19:28:56,988 - INFO - --- Checking bucket: config-bucket-291846646255 ---
+2025-07-18 19:28:57,360 - INFO -   - Versioning Status: NotEnabled
+2025-07-18 19:28:57,435 - INFO -   - Public Access Blocked: True
+2025-07-18 19:28:57,435 - INFO - --- Checking bucket: tjsbucketforhisbuckets ---
+2025-07-18 19:28:57,731 - INFO -   - Versioning Status: Enabled
+2025-07-18 19:28:57,800 - INFO -   - Public Access Blocked: True
+2025-07-18 19:28:57,800 - INFO - --- Checking bucket: tsmooths-s3bucket-fun ---
+2025-07-18 19:28:58,081 - INFO -   - Versioning Status: Enabled
+2025-07-18 19:28:58,149 - INFO -   - Public Access Blocked: True
+2025-07-18 19:28:58,150 - INFO - Finished auditing all buckets.
+2025-07-18 19:28:58,150 - INFO - Creating CSV report from audit findings...
+2025-07-18 19:28:58,158 - INFO - Successfully saved report to s3_security_report.csv
+2025-07-18 19:28:58,158 - INFO - S3 Auditor script finished.

@@ -1,0 +1,2 @@
+PolicyName,PolicyARN,Finding
+Test-Admin-Policy,arn:aws:iam::291846646255:policy/Test-Admin-Policy,"Policy grants full Administrator Access ('Allow', '*', '*')"

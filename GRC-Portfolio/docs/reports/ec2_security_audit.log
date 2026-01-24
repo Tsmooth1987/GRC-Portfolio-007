@@ -1,0 +1,21 @@
+2025-07-18 20:07:21,755 - INFO - EC2 Security Group Auditor script started.
+2025-07-18 20:07:21,766 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 20:07:21,954 - INFO - Connecting to AWS to get EC2 Security Groups...
+2025-07-18 20:07:22,425 - INFO - Successfully found 1 security group(s) to audit.
+2025-07-18 20:07:22,425 - INFO - Starting analysis of security group rules...
+2025-07-18 20:07:22,425 - INFO -   - Analyzing group: default (sg-0a7a8a1bc888d7870)
+2025-07-18 20:07:22,425 - INFO - Finished analyzing all security groups.
+2025-07-18 20:07:22,425 - INFO - No risky security group rules found. No report generated.
+2025-07-18 20:07:22,425 - INFO - EC2 Security Group Auditor script finished.
+2025-07-18 20:11:51,708 - INFO - EC2 Security Group Auditor script started.
+2025-07-18 20:11:51,717 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-18 20:11:51,915 - INFO - Connecting to AWS to get EC2 Security Groups...
+2025-07-18 20:11:52,529 - INFO - Successfully found 2 security group(s) to audit.
+2025-07-18 20:11:52,529 - INFO - Starting analysis of security group rules...
+2025-07-18 20:11:52,529 - INFO -   - Analyzing group: test-risky-sg (sg-0d928eb31820e27e4)
+2025-07-18 20:11:52,529 - WARNING -     - FOUND RISKY RULE in test-risky-sg: Allows access to sensitive port 22 (TCP) from Anywhere (0.0.0.0/0)
+2025-07-18 20:11:52,530 - INFO -   - Analyzing group: default (sg-0a7a8a1bc888d7870)
+2025-07-18 20:11:52,530 - INFO - Finished analyzing all security groups.
+2025-07-18 20:11:52,530 - INFO - Found 1 risky rule(s). Creating CSV report...
+2025-07-18 20:11:52,537 - INFO - Successfully saved security group audit report to security_group_report.csv
+2025-07-18 20:11:52,537 - INFO - EC2 Security Group Auditor script finished.
