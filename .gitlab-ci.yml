@@ -1,0 +1,56 @@
+stages:
+  - security-scan
+  - security-hub-import
+
+variables:
+  AWS_DEFAULT_REGION: "us-east-1"
+
+# SAST Scan
+sast:
+  stage: security-scan
+  image: python:3.11
+  script:
+    - pip install bandit safety semgrep
+    - bandit -r . -f json -o bandit-report.json || true
+    - safety check --json --output safety-report.json || true
+    - semgrep --config=auto --json --output=semgrep-report.json . || true
+  artifacts:
+    reports:
+      sast: bandit-report.json
+    paths:
+      - bandit-report.json
+      - safety-report.json
+      - semgrep-report.json
+    expire_in: 1 week
+  only:
+    - main
+    - merge_requests
+
+# DAST Scan (for web applications)
+dast:
+  stage: security-scan
+  image: owasp/zap2docker-stable
+  script:
+    - mkdir -p /zap/wrk
+    - /zap/zap-baseline.py -t https://terence-webster.com -J dast-report.json
+  artifacts:
+    reports:
+      dast: dast-report.json
+    paths:
+      - dast-report.json
+    expire_in: 1 week
+  only:
+    - main
+
+# Import to Security Hub
+import-security-hub:
+  stage: security-hub-import
+  image: python:3.11
+  script:
+    - pip install boto3 awscli
+    - python scripts/import-security-findings.py
+  dependencies:
+    - sast
+    - dast
+  only:
+    - main
