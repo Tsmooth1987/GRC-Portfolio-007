@@ -1,0 +1,323 @@
+/* Custom styles */
+:root {
+    --primary: #1e40af;
+    --primary-light: #3b82f6;
+    --dark: #1e293b;
+    --light: #f8fafc;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* Add smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation */
+.nav-link {
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+    opacity: 0.2;
+}
+
+/* Project Cards */
+.project-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Buttons */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+}
+/* Animations */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Project Card Animations */
+.project-card {
+    transition: all 0.3s ease;
+    opacity: 0; /* Start hidden */
+}
+
+/* Ensure project cards are visible when they have this class */
+.project-card.animate-fade-in {
+    opacity: 1;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+}
+/* Project Cards */
+.project-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.project-card .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card .content .mt-auto {
+    margin-top: auto;
+}
+
+/* Color variants */
+.bg-blue-100 { background-color: #dbeafe; }
+.text-blue-600 { color: #2563eb; }
+.bg-green-100 { background-color: #dcfce7; }
+.text-green-600 { color: #16a34a; }
+.bg-purple-100 { background-color: #f3e8ff; }
+.text-purple-600 { color: #9333ea; }
+.bg-yellow-100 { background-color: #fef9c3; }
+.text-yellow-600 { color: #ca8a04; }
+
+/* Responsive grid */
+@media (max-width: 768px) {
+    .project-card {
+        margin-bottom: 1.5rem;
+    }
+}
+/* Enhanced Project Cards */
+.project-card {
+    @apply bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100;
+}
+
+.project-card .project-image {
+    @apply relative h-48 overflow-hidden;
+}
+
+.project-card .project-image img {
+    @apply w-full h-full object-cover transition-transform duration-500 group-hover:scale-105;
+}
+
+.project-card .project-content {
+    @apply p-6;
+}
+
+.project-card .project-tags {
+    @apply flex flex-wrap gap-2 mt-3;
+}
+
+.project-card .project-tag {
+    @apply px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-700;
+}
+
+.project-card .project-links {
+    @apply flex justify-between items-center mt-4 pt-4 border-t border-gray-100;
+}
+
+/* Hover Effects */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .project-card {
+        @apply bg-gray-800 border-gray-700;
+    }
+    .project-card .project-content {
+        @apply text-gray-200;
+    }
+    .project-card .project-tag {
+        @apply bg-gray-700 text-gray-200;
+    }
+}
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Add staggered delays */
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Hover effects */
+.project-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+/* Animation for project cards */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.project-card {
+    display: block;
+    opacity: 0;
+}
+
+.filter-btn {
+    transition: all 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+    .project-card {
+        background-color: #1f2937;
+        border-color: #374151;
+    }
+    .project-card .text-gray-600 {
+        color: #d1d5db;
+    }
+    .filter-btn:not(.active) {
+        background-color: #374151;
+        color: #e5e7eb;
+    }
+    .filter-btn:not(.active):hover {
+        background-color: #4b5563;
+    }
+}
+/* Project Card Animations */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.project-card {
+    display: block;
+    opacity: 0; /* Will be animated in */
+}
+
+/* Filter buttons */
+.filter-btn {
+    transition: all 0.2s ease;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .project-card {
+        background-color: #1f2937;
+        border-color: #374151;
+    }
+    .project-card .text-gray-600 {
+        color: #d1d5db;
+    }
+    .filter-btn:not(.active) {
+        background-color: #374151;
+        color: #e5e7eb;
+    }
+    .filter-btn:not(.active):hover {
+        background-color: #4b5563;
+    }
+}
+}
